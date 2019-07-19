@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chryl.mapper.UserMapper">
+    <resultMap id="baseMap" type="com.chryl.bean.User">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="user_password" jdbcType="VARCHAR" property="userPassword"/>
+    </resultMap>
+    <select id="selectByUserId" resultMap="baseMap" parameterType="java.lang.String">
+        SELECT * FROM USER u WHERE u.id=#{id,jdbcType=VARCHAR}
+    </select>
+    <select id="selectByUserName" resultMap="baseMap" parameterType="java.lang.String">
+        SELECT * FROM USER u WHERE u.user_name=#{userName,jdbcType=VARCHAR}
+    </select>
+</mapper>
