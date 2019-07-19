@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
+ * 使用postman
+ * <p>
  * Created By Chr on 2019/7/19.
  */
 @RestController
