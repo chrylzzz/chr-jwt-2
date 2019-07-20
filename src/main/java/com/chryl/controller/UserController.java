@@ -46,8 +46,10 @@ public class UserController {
 
     //查看个人信息,验证jwt
     @CheckToken
-    @GetMapping("/getMessage")
-    public String getMessage() {
-        return "你已通过验证";
+    @GetMapping("/getMessage/{id}")
+    public String getMessage(@PathVariable("id") String id) {
+        User user = userMapper.selectByUserId(id);
+        return "你已通过验证:"+user.getUserName();
     }
+
 }
